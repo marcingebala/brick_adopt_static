@@ -1,0 +1,30 @@
+name: Deploy to VPS Main
+
+on:
+  push:
+    branches:
+      - main  # Uruchom na push do gałęzi main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Setup SSH
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.VPS_SSH_KEY }}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan 57.128.198.233 >> ~/.ssh/known_hosts
+
+    - name: Deploy to VPS
+      run: |
+        ssh ubuntu@57.128.198.233 'bash -s' <<'EOF'
+          cd /var/www/html
+          git pull origin main
+          # Dodaj dodatkowe kroki budowania, jeśli są potrzebne
+          sudo systemctl restart nginx
+        EOF
