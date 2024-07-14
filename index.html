@@ -5,12 +5,25 @@
   <link rel="stylesheet" href="https://geowidget.inpost.pl/inpost-geowidget.css"/>
   <script src='https://geowidget.inpost.pl/inpost-geowidget.js' defer></script>
   <script>
-    document.addEventListener('onpointselect', (event) => alert(event.details.name));
+    document.addEventListener('onpointselect', (event) => {
+      console.log('onpointselect', event.details.name)
+
+      var message = { pointSelected: event.details.name };
+      window.parent.postMessage(message, '*');
+    
+    });
   </script>
+  <style>
+    body {
+      margin: 0px;
+      padding: 0px;
+    }
+  </style>
 </head>
 
 <body>
-  5
-<inpost-geowidget height="300px" style="height: 400px" onpoint="afterPointSelected" token='eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJzQlpXVzFNZzVlQnpDYU1XU3JvTlBjRWFveFpXcW9Ua2FuZVB3X291LWxvIn0.eyJleHAiOjIwMzYzMzE0NDksImlhdCI6MTcyMDk3MTQ0OSwianRpIjoiNDE1MWM5YWEtYzA5MC00ZTUwLWEyY2MtNzM5MDE2Y2RiMjZlIiwiaXNzIjoiaHR0cHM6Ly9sb2dpbi5pbnBvc3QucGwvYXV0aC9yZWFsbXMvZXh0ZXJuYWwiLCJzdWIiOiJmOjEyNDc1MDUxLTFjMDMtNGU1OS1iYTBjLTJiNDU2OTVlZjUzNTpWZi1IbHZMdllwYzFwTTNTWS03dkJ5VGdmbWROYW1HN21iYVVYd2I4cEpJIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic2hpcHgiLCJzZXNzaW9uX3N0YXRlIjoiNTBkOTFjYjEtY2I5Yy00OWQ4LTljM2EtZDZkYTQzZjI3ODZkIiwic2NvcGUiOiJvcGVuaWQgYXBpOmFwaXBvaW50cyIsInNpZCI6IjUwZDkxY2IxLWNiOWMtNDlkOC05YzNhLWQ2ZGE0M2YyNzg2ZCIsImFsbG93ZWRfcmVmZXJyZXJzIjoiKi52cHMub3ZoLm5ldCIsInV1aWQiOiI4Yzk5NjJkZi02OGE5LTRmNGYtODUyYi1kMTJkZmJhMTBkMGMifQ.fFUgILlSesXc3uSUHUsxGJbI4jxB2Zy6Rbqll9dXx7xvCrRNJiuAvoUVZJSzKwW6xw1fLbq7prC212jZ4W1fPpSgvozk6TkaoH9RkPOXc3G8WBOfLw8bKWJiUw9KLr_JL4csjU6Pzj7ckCzF-8exmFwA7CfyIWZswAkHW-VYkhoO8nj3e6CJeORaTOELeAQ_MTtZcsrD6c5KnJX_39-wpKm2RF4zZYayc5Vq6peWAmzPxcsb0yIykijxSdn7JE1b4Izz7aGPewfpDYd6Qv1o75z8hH7JAwqTUlBHVHlcroFuhIQSNe3kviXP2efxxrp6tSx8QHKuWH1AprAl4JfntA' language='pl'  config='parcelCollect'></inpost-geowidget>
+<div style="width: 100%; height: 500px;">
+  <inpost-geowidget onpoint="onpointselect" token='eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJzQlpXVzFNZzVlQnpDYU1XU3JvTlBjRWFveFpXcW9Ua2FuZVB3X291LWxvIn0.eyJleHAiOjIwMzYzMzE0NDksImlhdCI6MTcyMDk3MTQ0OSwianRpIjoiNDE1MWM5YWEtYzA5MC00ZTUwLWEyY2MtNzM5MDE2Y2RiMjZlIiwiaXNzIjoiaHR0cHM6Ly9sb2dpbi5pbnBvc3QucGwvYXV0aC9yZWFsbXMvZXh0ZXJuYWwiLCJzdWIiOiJmOjEyNDc1MDUxLTFjMDMtNGU1OS1iYTBjLTJiNDU2OTVlZjUzNTpWZi1IbHZMdllwYzFwTTNTWS03dkJ5VGdmbWROYW1HN21iYVVYd2I4cEpJIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic2hpcHgiLCJzZXNzaW9uX3N0YXRlIjoiNTBkOTFjYjEtY2I5Yy00OWQ4LTljM2EtZDZkYTQzZjI3ODZkIiwic2NvcGUiOiJvcGVuaWQgYXBpOmFwaXBvaW50cyIsInNpZCI6IjUwZDkxY2IxLWNiOWMtNDlkOC05YzNhLWQ2ZGE0M2YyNzg2ZCIsImFsbG93ZWRfcmVmZXJyZXJzIjoiKi52cHMub3ZoLm5ldCIsInV1aWQiOiI4Yzk5NjJkZi02OGE5LTRmNGYtODUyYi1kMTJkZmJhMTBkMGMifQ.fFUgILlSesXc3uSUHUsxGJbI4jxB2Zy6Rbqll9dXx7xvCrRNJiuAvoUVZJSzKwW6xw1fLbq7prC212jZ4W1fPpSgvozk6TkaoH9RkPOXc3G8WBOfLw8bKWJiUw9KLr_JL4csjU6Pzj7ckCzF-8exmFwA7CfyIWZswAkHW-VYkhoO8nj3e6CJeORaTOELeAQ_MTtZcsrD6c5KnJX_39-wpKm2RF4zZYayc5Vq6peWAmzPxcsb0yIykijxSdn7JE1b4Izz7aGPewfpDYd6Qv1o75z8hH7JAwqTUlBHVHlcroFuhIQSNe3kviXP2efxxrp6tSx8QHKuWH1AprAl4JfntA' language='pl'  config='parcelCollect'></inpost-geowidget>
+</div>
 </body>
 </html>
