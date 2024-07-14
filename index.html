@@ -6,9 +6,9 @@
   <script src='https://geowidget.inpost.pl/inpost-geowidget.js' defer></script>
   <script>
     document.addEventListener('onpointselect', (event) => {
-      console.log('onpointselect', event)
+      console.log('onpointselect', event.detail)
 
-      var message = { pointSelected: event.details.name };
+      var message = { pointSelected: event.detail };
       window.parent.postMessage(message, '*');
     
     });
