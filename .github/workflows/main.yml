@@ -23,7 +23,7 @@ jobs:
     - name: Deploy to VPS
       run: |
         ssh ubuntu@57.128.198.233 'bash -s' <<'EOF'
-          cd /var/www/html
+          cd /var/www/brick_adopt_static
           git pull origin main
           # Dodaj dodatkowe kroki budowania, jeśli są potrzebne
           sudo systemctl restart nginx
