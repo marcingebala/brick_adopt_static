@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://sandbox-easy-geowidget-sdk.easypack24.net/inpost-geowidget.css"/>
+  <script src='https://sandbox-easy-geowidget-sdk.easypack24.net/inpost-geowidget.js' defer></script>
+  <script>
+    function afterPointSelected(point) {
+      alert('Selected point: ' + point.name);
+    }
+  </script>
+</head>
+
+<body>
+<inpost-geowidget onpoint="afterPointSelected" token='eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJzQlpXVzFNZzVlQnpDYU1XU3JvTlBjRWFveFpXcW9Ua2FuZVB3X291LWxvIn0.eyJleHAiOjIwMzYzMjg2MTksImlhdCI6MTcyMDk2ODYxOSwianRpIjoiYzQyYmQ0N2UtYTA0OC00ZjEyLWExNGItY2RlNjU3Y2I2ZWVjIiwiaXNzIjoiaHR0cHM6Ly9sb2dpbi5pbnBvc3QucGwvYXV0aC9yZWFsbXMvZXh0ZXJuYWwiLCJzdWIiOiJmOjEyNDc1MDUxLTFjMDMtNGU1OS1iYTBjLTJiNDU2OTVlZjUzNTpWZi1IbHZMdllwYzFwTTNTWS03dkJ5VGdmbWROYW1HN21iYVVYd2I4cEpJIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic2hpcHgiLCJzZXNzaW9uX3N0YXRlIjoiYjRkODZjMzItYTAzYy00ZDkwLWIwMWQtOTgzNjkwODQyYTdhIiwic2NvcGUiOiJvcGVuaWQgYXBpOmFwaXBvaW50cyIsInNpZCI6ImI0ZDg2YzMyLWEwM2MtNGQ5MC1iMDFkLTk4MzY5MDg0MmE3YSIsImFsbG93ZWRfcmVmZXJyZXJzIjoiNTcuMTI4LjE5OC4yMzMiLCJ1dWlkIjoiOGM5OTYyZGYtNjhhOS00ZjRmLTg1MmItZDEyZGZiYTEwZDBjIn0.R8Q2bLdWlBpJ0ZO3CGVh5XQcFoKnluz1snQRIbYKwoiC6H_Zjpk93HuQZh_-c397ggrIp5K-vCoA_ubiDqbImQE0u_0nhi0EolZpvBTLA3z4Bzh2A0-wQiJiwpjDmd1N76-WBYi_M-zSRrj6CEpYIBwLMCkw8NydFK_EK-jxTpnBkXSkSuX5SYPZR8svohfPKxdeicJoABqiJjkgNb3not1v0NylLJc-nEs_tIe8HXjwasgnw6AUFeiXaBRyowY6NGEi5kFuimiopSGfdlkBrvOggus1bsmGpsw_85DIKWYX_Um70mr9yVTYooU1edPJjANCdyj8ilBTF6R12i6JDQ' language='pl'  config='parcelCollect'></inpost-geowidget>
+</body>
+</html>
